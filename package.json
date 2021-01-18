@@ -33,7 +33,7 @@
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.19.1",
     "jwt-decode": "^2.2.0",
-    "node-cache": "^5.1.0",
+    "node-cache": "^5.1.2",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
