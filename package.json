@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/navikt/pb-kontakt-oss-api#readme",
   "dependencies": {
-    "@sanity/client": "^1.149.2",
+    "@sanity/client": "^1.150.7",
     "console-stamp": "^0.2.9",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
