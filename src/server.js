@@ -27,6 +27,23 @@ const client = sanityClient({
   useCdn: false,
 });
 
+// Cors
+app.use((req, res, next) => {
+  const origin = req.get("origin");
+  const allowedOrigin = process.env.NODE_ENV === "production"
+      ? `(http|https)://(.*).nav.no`
+      : `http://localhost:3000`;
+  if (origin && origin.match(allowedOrigin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Credentials", "true");
+  }
+  next();
+});
+
 // Nais
 app.use(cookies());
 app.get(`${BASE_URL}/internal/isAlive`, (req, res) => res.sendStatus(200));
